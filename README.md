@@ -110,6 +110,8 @@ This is the process...
 
 11. #### Test the app locally and then add, commit and push to Heroku.
 
+The deployed app can be found here https://ng2-ror-heroku-v2.herokuapp.com
+
 I was following article belove to get started although I change the flow a bit.
 http://angularonrails.wpengine.com/deploy-angular-cli-webpack-project-heroku/
 
