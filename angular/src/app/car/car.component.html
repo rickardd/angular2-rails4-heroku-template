@@ -1,0 +1,13 @@
+<p>
+  Cars works!
+</p>
+
+This page has been requested <b>{{ numbOfRequests }}</b> of times...
+
+<ul>
+  <li *ngFor="let car of cars">
+    {{ car.type }}
+    {{ car.name }}
+    {{ car.color }}
+  </li>
+</ul>
