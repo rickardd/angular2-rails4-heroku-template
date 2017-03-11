@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   get '/', to: 'index#index'
 
+  resources :api do
+    collection do
+      resources :cars
+    end
+  end
+
 end
