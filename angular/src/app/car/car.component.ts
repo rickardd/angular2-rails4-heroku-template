@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map'
 
 @Component({
@@ -17,12 +17,27 @@ export class CarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getCars()
+    this.addCar()
+  }
+
+  getCars(){
     this._http.get('/api/cars')
       .map( response => response.json())
       .subscribe(response => {
         this.cars = response.cars
         this.numbOfRequests = response.counter
         console.log( this.cars, response )
+      });
+  }
+
+  addCar(){
+    let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    this._http.post('/api/cars', JSON.stringify({ car: 'Toyota'}), headers)
+      .map( response => response.json())
+      .subscribe(response => {
+        console.log( "new car", response )
       });
   }
 
